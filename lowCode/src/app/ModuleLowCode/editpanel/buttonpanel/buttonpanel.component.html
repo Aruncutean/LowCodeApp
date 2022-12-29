@@ -1,0 +1,48 @@
+<div style="display: flex;
+justify-content: center;
+flex-direction: column;
+flex-wrap: nowrap;">
+    <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 10px;">
+        <h5>Text:</h5><input type="text" [(ngModel)]="item.text">
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 10px;">
+        <h5>Color:</h5> <input type="color" id="body" name="body" [value]="item.style.color"
+            [(ngModel)]="item.style.color">
+    </div>
+    <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 10px;">
+        <h5>Background:</h5> <input type="color" id="body" name="body" [value]="item.style.background"
+            
+            [(ngModel)]="item.style.background">
+    </div>
+    <div style="margin: 10px;">
+        <h5>Border</h5>
+        <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 10px;">
+            <h5>Color:</h5> <input type="color" id="body" name="body" [value]="item.style.borderColor"
+                [(ngModel)]="item.style.borderColor">
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+        </div>
+        <div style="display: flex;flex-direction: row;justify-content: space-between;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+        </div>
+    </div>
+
+    <div style="margin: 10px;">
+        <h5>Padding</h5>
+        <div style="display: flex;justify-content: center;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+        </div>
+        <div style="display: flex;flex-direction: row;justify-content: space-between;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+        </div>
+        <div style="display: flex;justify-content: center;">
+            <input type="number" id="tentacles" name="tentacles" value="0" min="0" max="100" style="width: 45px;">
+        </div>
+    </div>
+</div>

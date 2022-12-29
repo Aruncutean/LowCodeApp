@@ -1,0 +1,8 @@
+<div class="addContainer" (dragenter)="dropenter($event)" (dragleave)="dropleave($event)" (drop)="drop($event)"
+    (dragover)="DragOver($event)" [style.height]="isVisible?'45px':'10px'"
+    [style.width]="isVisible?'97%':'53%'"
+    [style.position]="isVisible?'relative':'absolute'"
+    [style.border]="isVisible?'2px dashed #c2c2c2':'none'">
+
+    <span *ngIf="isVisible">Drop here</span>
+</div>

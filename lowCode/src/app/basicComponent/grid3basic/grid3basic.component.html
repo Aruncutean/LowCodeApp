@@ -1,0 +1,21 @@
+<div style="display: grid; grid-template-columns: auto auto auto;">
+    <div>
+        <dropzon-comp *ngIf="isItem('left')==0" [isVisible]="true" (dropEmint)="isDrop('left')"
+            [isGrird]="true"></dropzon-comp>
+
+        <itemadd-comp *ngFor="let i of filterItemsOfType('left')" [itemBasic]="i"></itemadd-comp>
+
+    </div>
+    <div>
+        <dropzon-comp *ngIf="isItem('center')==0" [isVisible]="true" (dropEmint)="isDrop('center')"
+            [isGrird]="true"></dropzon-comp>
+
+        <itemadd-comp *ngFor="let i of filterItemsOfType('center')" [itemBasic]="i"></itemadd-comp>
+
+    </div>
+    <div>
+        <dropzon-comp *ngIf="isItem('right')==0" [isVisible]="true" (dropEmint)="isDrop('right')"
+            [isGrird]="true"></dropzon-comp>
+        <itemadd-comp *ngFor="let i of filterItemsOfType('right')" [itemBasic]="i"></itemadd-comp>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div [style.width]="isSelected? '250px' : '0px'" class="sidenav">
+    <div style="display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    overflow: hidden;">
+        <i (click)="closeEditPanel()" class="bi bi-arrow-right"></i>
+        <h5 style="padding: 10px 10px 0px 10px;">Edit Panel</h5>
+    </div>
+    <ng-container #panel>
+
+    </ng-container>
+
+</div>

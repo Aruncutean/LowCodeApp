@@ -1,0 +1,15 @@
+<div class="container">
+    <H1>LowCode <span style="color:#f4c328">Platform</span></H1>
+    <span>A low-code development platform provides a development environment used to create application software
+        through a graphical user interface. A low-coded platform may produce entirely operational applications, or
+        require additional coding for specific situations.
+    </span>
+    <br>
+    <button *ngIf="isLogin" (click)="appPagisNavigate()"
+        style="margin-top: 20px;   font-family: 'Roboto', sans-serif; font-weight: 500;" type="button"
+        class="btn btn-warning">Go to
+        App Pages</button>
+    <button *ngIf="!isLogin" (click)="loginNavigate()"
+        style="margin-top: 20px;   font-family: 'Roboto', sans-serif; font-weight: 500;" type="button"
+        class="btn btn-warning">Go to Login</button>
+</div>

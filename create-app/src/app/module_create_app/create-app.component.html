@@ -1,0 +1,48 @@
+<h1>Aplication Pages</h1>
+
+<div class="alert alert-warning" role="alert" (click)="addNewAplication()">
+    <div><i class="bi bi-plus-circle"> </i> <span>Add new aplication</span></div>
+</div>
+
+<div class="cotainer">
+    <div *ngFor="let item of aplication" class="card item">
+        <div class="card-body">
+            <div class="header-item">
+                <img src='../../assets/imagenotfound.png'>
+                <h5 class="card-title">{{item.name}}</h5>
+            </div>
+            <p class="card-text">Some quick example text to build
+                content.</p>
+            <a class="btn btn-primary" style="bottom: 20px; position: absolute;" (click)="goToAplication(item.id)">Go in
+                aplication</a>
+        </div>
+    </div>
+</div>
+
+<nav class="cotainer" aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item" (click)="previousPage()">
+            <a class="page-link" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link">{{pageNumber}}</a></li>
+        <li class="page-item" (click)="nextPage()">
+            <a class="page-link" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+<div id="myModal" class="modal" [style.display]="loadingIndicator ? 'block':'none'">
+    <div style="text-align: center;margin-top: 200px;">
+        <div class=" spinner-border" role="status">
+
+        </div>
+    </div>
+</div>
+
+<create-app-popap [isActive]="showPopap" (closePopapEmitter)="addNewAplication()"></create-app-popap>

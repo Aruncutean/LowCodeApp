@@ -1,0 +1,18 @@
+<div class="container1">
+    <h5 style="padding: 10px 10px 0px 10px;">Basic Fields</h5>
+    <div class="box-item">
+        <div class="container-item ">
+            <button *ngFor="let item of basicElement" class="item" draggable="true" (dragstart)="dragsStart(item)">
+                <div style="display: flex;    
+                 flex-direction: column;
+                align-items: center;
+                height: 100%;
+                justify-content: space-around;">
+                    <i [ngClass]="'bi '+ item.icon" style="font-size: 25px;"></i>
+                    {{item.type}}
+                </div>
+            </button>
+        </div>
+
+    </div>
+</div>

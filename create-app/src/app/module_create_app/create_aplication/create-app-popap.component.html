@@ -1,0 +1,65 @@
+<div id="myModal" class="modal" [style.display]="isActive?'block':'none'">
+    <div *ngIf="alertIsShow" class="alert alert-danger" role="alert" style="top: 0;
+    width: 100%;
+    position: absolute;">
+        {{errorMassage}}
+    </div>
+    <div class="modal-content">
+        <div>
+            <h2>Create New Aplication</h2>
+            <form [formGroup]="aplicationFormGroup">
+                <div>
+                    <div class="form-group">
+                        <label>Name aplication</label>
+                        <input [class.is-invalid]="name?.invalid && name?.touched" type="text" class="form-control"
+                            placeholder="Name aplication" formControlName="name" required>
+                        <div
+                            *ngIf="(aplicationFormGroup.get('name')?.invalid && aplicationFormGroup.get('name')?.touched) || aplicationFormGroup.get('name')?.dirty">
+                            <small *ngIf="aplicationFormGroup.get('name')?.hasError('required')" class="text-danger">
+                                Name
+                                apps
+                                is
+                                required</small>
+
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 10px;">
+                        <label for="exampleFormControlTextarea1">Description aplication</label>
+                        <textarea [class.is-invalid]="description?.invalid && description?.touched"
+                            style="max-height: 250px;" class="form-control" id="exampleFormControlTextarea1"
+                            formControlName="description" required rows="3"></textarea>
+                        <div
+                            *ngIf="(aplicationFormGroup.get('description')?.invalid && aplicationFormGroup.get('description')?.touched) || aplicationFormGroup.get('description')?.dirty">
+                            <small *ngIf="aplicationFormGroup.get('description')?.hasError('required')"
+                                class="text-danger">Description
+                                is
+                                required</small>
+                            <small *ngIf="aplicationFormGroup.get('description')?.hasError('minlength')"
+                                class="text-danger">Minimum 5
+                                characters</small>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    margin: 10px;">
+
+                            <button type="button" style="margin-right: 10px;" class="btn btn-secondary"
+                                (click)="closePopap()">Close</button>
+                            <button type="button" class="btn btn-primary" (click)="saveAplication()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal" [style.display]="loadingIndicator ? 'block':'none'">
+    <div style="text-align: center;margin-top: 200px;">
+        <div class=" spinner-border" role="status">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div style="display: grid; grid-template-columns: 40px auto 40px;"
+  [style.grid-template-columns]="tabActive==true ? '260px auto '+editpanel :'40px auto '+editpanel">
+
+  <leftnav-comp [listItem]="listItem" (activeTabEmit)="activeTab($event)"></leftnav-comp>
+  <div>
+    <div style="
+    display: flex;flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;">
+      <button (click)="saveListItem()" type="button" class="btn btn-warning" style="margin: 10px;">Save</button>
+    </div>
+    <div class="container-pages" (dragover)="DragOver($event)">
+      <div *ngFor="let item of listItem;let index=index" (click)="selectItemEvent(index)"
+        [style.border]="selectItemIndex==index && isSelected ?'2px dashed #c2c2c2':'none'">
+        <dropzon-comp (dropEmint)="dropItemCenter(index)"></dropzon-comp>
+        <itemadd-comp [itemBasic]="item"></itemadd-comp>
+      </div>
+      <dropzon-comp [isVisible]="true" (dropEmint)="dropEmint()"></dropzon-comp>
+    </div>
+  </div>
+  <editpanel-comp [isSelected]="isSelected" [item]="selectItem" (closeEditPanelOut)="closeEditPanel()"></editpanel-comp>
+</div>
